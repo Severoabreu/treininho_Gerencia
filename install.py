@@ -29,7 +29,7 @@ def install():
         
         # Entidade 2
 
-        connection.execute("""""")
+        #connection.execute("""""")
         
         
         # Entidade 3
