@@ -4,10 +4,21 @@ def install():
     connection = get_connection()
 
     try:
+        
+        # Entidade 1
         # Criar tabela no banco de dados
         connection.execute("""""")
 
         # Inserir dados iniciais (OBRIGATÓRIO!!!!)
+        
+        
+        # Entidade 2
+        conection.execute("""""")
+        
+        
+        # Entidade 3
+        connection.execute("""""")
+        
         
         connection.commit()
 
