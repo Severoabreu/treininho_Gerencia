@@ -1,6 +1,6 @@
 from install import install
 from interface.gui import UI
-from interface.ui_livro import UILivro  # Ajuste para o nome exato da classe em ui_livro.py
+from interface.ui_livro import UILivro  
 from service.jogo_service import JogoService
 from service.livro_service import LivroService
 from repository.jogo_repository import JogoRepository
