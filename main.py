@@ -1,13 +1,13 @@
 from install import install
 from interface.gui import UI
-from service.services import Services
-from repository.dao_entity import DAOEntity
+from service.jogo_service import JogoService
+from repository.jogo_repository import JogoRepository
 
 def main():
     install()
 
-    repository = DAOEntity()
-    services = Services(repository)
+    repository = JogoRepository()
+    services = JogoService(repository)
     UI(services).show_principal_menu()
 
 

@@ -4,7 +4,7 @@ def install():
     connection = get_connection()
 
     try:
-        
+        cur = connection.cursor()
         # Entidade 1
         # Criar tabela no banco de dados
         connection.execute("""
@@ -41,6 +41,17 @@ def install():
                 lancado BOOLEAN DEFAULT TRUE
             )
         """)
+
+        cur.execute("SELECT COUNT(*) FROM jogo")
+        if cur.fetchone()[0] == 0:
+            connection.executemany("""
+                INSERT INTO jogo (nome, preco, lancado)
+                VALUES (?, ?, ?);
+            """, [
+                ('GTA VI', 499.99, True),
+                ('Hollow Knight Silksong: Sea of Sorrow', 100.50, False),
+                ('Terraria', 37.99, True)
+            ])
         
         
         connection.commit()
