@@ -7,8 +7,23 @@ def install():
         cur = connection.cursor()
         # Entidade 1
         # Criar tabela no banco de dados
-        connection.execute("""""")
-
+        connection.execute("""
+            CREATE TABLE IF NOT EXISTS livro(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                titulo TEXT NOT NULL,
+                autor TEXT,
+                lido INTEGER NOT NULL DEFAULT 0
+            )
+            """)
+        cursor = connection.execute("SELECT COUNT(*) FROM livro")
+        total_livros = cursor.fetchone()[0]
+        
+        if total_livros == 0:
+            connection.execute(
+                "INSERT INTO livro (titulo, autor, lido) VALUES (?, ?, ?)",
+                ("paranormal", "Ronaldo", 0)
+                )
+    
         # Inserir dados iniciais (OBRIGATÓRIO!!!!)
         
         
