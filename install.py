@@ -28,11 +28,19 @@ def install():
         
         
         # Entidade 2
-        #conection.execute("""""")
+
+        connection.execute("""""")
         
         
         # Entidade 3
-        #connection.execute("""""")
+        connection.execute("""
+            CREATE TABLE IF NOT EXISTS jogo (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome VARCHAR UNIQUE NOT NULL,
+                preco FLOAT NOT NULL,
+                lancado BOOLEAN DEFAULT TRUE
+            )
+        """)
         
         
         connection.commit()
